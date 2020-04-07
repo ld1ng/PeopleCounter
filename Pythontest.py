@@ -101,12 +101,16 @@ def main():
 
 			#计算专注度
 			def quality():
-				if (int(careful)/int(num_detections)>=0.85):
-					print ("课堂质量:优")
-				if(0.5<=int(careful)/int(num_detections)<0.85):
-					print ("课堂质量:中")
-				if(int(careful)/int(num_detections)<0.5):
-					print ("课堂质量:差")
+				if(n>=0):
+					if (int(careful)/int(num_detections)>=0.85):
+						print ("课堂质量:优")
+					if(0.5<=int(careful)/int(num_detections)<0.85):
+						print ("课堂质量:中")
+					if(int(careful)/int(num_detections)<0.5):
+						print ("课堂质量:差")
+				if(n<0):
+					print ("检测错误")
+				
 
 			# 输出
 			print("[%s] 检测人数: %s , 其中 %d 人上课不专心" %(current_time, num_detections, n))
